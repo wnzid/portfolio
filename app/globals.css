@@ -53,12 +53,10 @@ html.dark {
   --warning-text: #ffcdd2;
   --warning-border: #e57373;
 
-  /* map existing variable names to these values for compatibility */
   --bg: var(--background);
   --card: var(--inset);
   --muted: var(--subdued);
   --text: #8A99C2;
-  /* stronger border on dark to improve contrast */
   --border: rgba(255, 255, 255, 0.14);
   color-scheme: dark !important;
 }
@@ -82,11 +80,6 @@ body {
   transition: background-color 200ms ease, color 200ms ease;
 }
 
-/* Base typography
-   - Default body: Inter, 16px, relaxed line-height
-   - Use Geist Mono for micro labels/metadata (12px)
-*/
-
 body {
   font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 16px;
@@ -95,7 +88,6 @@ body {
   color: var(--text);
 }
 
-/* Micro labels and metadata (Geist Mono) */
 .micro-label {
   font-family: "Geist Mono", "Geist Mono Fallback", monospace;
   font-size: 12px;
@@ -105,7 +97,6 @@ body {
   color: var(--muted);
 }
 
-/* Top micro text (EST, clock) */
 .top-micro,
 .top-micro * {
   font-family: "Geist Mono", "Geist Mono Fallback", monospace;
@@ -114,7 +105,6 @@ body {
   color: var(--muted);
 }
 
-/* Date ranges and small metadata */
 .date-range {
   font-family: "Geist Mono", "Geist Mono Fallback", monospace;
   font-size: 12px;
@@ -123,7 +113,6 @@ body {
   letter-spacing: 0.12em;
 }
 
-/* Footer micro text (copyright, location, small metadata) */
 .footer-micro,
 .footer-micro * {
   font-family: "Geist Mono", "Geist Mono Fallback", monospace !important;
@@ -133,7 +122,6 @@ body {
   color: var(--muted);
 }
 
-/* Profile name */
 .profile-title {
   font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 20px;
@@ -141,7 +129,6 @@ body {
   line-height: 1.2;
 }
 
-/* Role subtitle (under name) */
 .role-sub {
   font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 16px;
@@ -149,7 +136,6 @@ body {
   color: var(--muted);
 }
 
-/* Intro paragraph */
 .intro-paragraph {
   font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 16px;
@@ -158,7 +144,6 @@ body {
   color: var(--text);
 }
 
-/* Section subtitle (e.g. brief explanatory lines under section headers) */
 .section-subtitle {
   font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 16px;
@@ -166,14 +151,12 @@ body {
   color: var(--muted);
 }
 
-/* Role title (job title) */
 .role-title {
   font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   font-size: 16px;
   font-weight: 500;
 }
 
-/* Description text used across experience/work */
 .desc {
   font-family: "Geist Mono", "Geist Mono Fallback", monospace !important;
   font-size: 12px !important;
@@ -232,7 +215,6 @@ html.dark .theme-toggle {
   color: var(--button-active-text);
 }
 
-/* Contact list rows (left icon + label, right-aligned detail + external icon) */
 .contact-list {
   display: block;
   border-radius: 8px;
