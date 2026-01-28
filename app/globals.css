@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f2e9;
+  --card: #fbf8f4;
+  --muted: #6b7280;
+  --text: #5A6B94;
+  --border: rgba(15, 23, 42, 0.06);
+  --focus-ring: rgba(59, 130, 246, 0.18);
+  --button-bg: transparent;
+  --button-hover: rgba(15, 23, 42, 0.03);
+  --button-active: rgba(0, 0, 0, 0.04);
+  --button-active-text: #0f172a;
+  --border-primary: rgba(15, 23, 42, 0.06);
+  --border-secondary: rgba(15, 23, 42, 0.03);
+  --radius: 10px;
+}
+
+html.dark {
+  --default: #e6cfff;
+  --subdued: #8a99c2;
+  --background: #0a0f1f;
+  --foreground: #10162b;
+  --inset: #1a223d;
+  --primary: #9ecbff;
+  --secondary: #8a99c2;
+  --overlay: #10162b;
+  --transparent: #10162b;
+  --input-bg: #10162b;
+  --focus-ring: #9ecbff;
+  --button-bg: #1a223d;
+  --button-hover: #253052;
+  --button-active: #2d3d63;
+  --button-active-text: #b8d4ff;
+  --border-primary: #9ecbff1a;
+  --border-secondary: #9ecbff0d;
+  --shortcut: #253052;
+  --shadow: #0000;
+  --cursor: #9ecbff30;
+
+  /* syntax highlighting / code theme */
+  --hljs-comment: var(--subdued);
+  --hljs-keyword: #82aaff;
+  --hljs-variable: #ffcb8b;
+  --hljs-string: #c3e88d;
+  --hljs-title: #9ecbff;
+  --hljs-class: #b0c9ff;
+  --hljs-type: #c792ea;
+  --hljs-deletion: #ff8b82;
+  --hljs-addition: #b2f2bb;
+
+  --warning-bg: #381a1a;
+  --warning-text: #ffcdd2;
+  --warning-border: #e57373;
+
+  /* map existing variable names to these values for compatibility */
+  --bg: var(--background);
+  --card: var(--inset);
+  --muted: var(--subdued);
+  --text: #8A99C2;
+  /* stronger border on dark to improve contrast */
+  --border: rgba(255, 255, 255, 0.14);
+  color-scheme: dark !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Base typography
+   - Default body: Inter, 16px, relaxed line-height
+   - Use Geist Mono for micro labels/metadata (12px)
+*/
+
+body {
+  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* Micro labels and metadata (Geist Mono) */
+.micro-label {
+  font-family: "Geist Mono", "Geist Mono Fallback", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Top micro text (EST, clock) */
+.top-micro,
+.top-micro * {
+  font-family: "Geist Mono", "Geist Mono Fallback", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Date ranges and small metadata */
+.date-range {
+  font-family: "Geist Mono", "Geist Mono Fallback", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+}
+
+/* Footer micro text (copyright, location, small metadata) */
+.footer-micro,
+.footer-micro * {
+  font-family: "Geist Mono", "Geist Mono Fallback", monospace !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+/* Profile name */
+.profile-title {
+  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Role subtitle (under name) */
+.role-sub {
+  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Intro paragraph */
+.intro-paragraph {
+  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* Section subtitle (e.g. brief explanatory lines under section headers) */
+.section-subtitle {
+  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Role title (job title) */
+.role-title {
+  font-family: "Inter", "Inter Fallback", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Description text used across experience/work */
+.desc {
+  font-family: "Geist Mono", "Geist Mono Fallback", monospace !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+
+.card-bg {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+@supports (color-mix(in oklab, red, red)) {
+  .card-bg {
+    background-color: color-mix(in oklab, var(--secondary) 10%, var(--card));
+  }
+}
+
+.content-column {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.soft-focus:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border-radius: 8px;
+  transition: background-color 160ms ease, transform 120ms ease, box-shadow 160ms ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+html.dark .theme-toggle {
+  background: var(--button-bg);
+  box-shadow: inset 0 0 0 1px var(--border-primary);
+}
+
+.theme-toggle[aria-pressed="true"] {
+  background: var(--button-active);
+  box-shadow: inset 0 0 0 1px var(--border-secondary);
+  color: var(--button-active-text);
+}
+
+/* Contact list rows (left icon + label, right-aligned detail + external icon) */
+.contact-list {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.contact-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  text-decoration: none;
+  background: transparent;
+  transition: background-color 160ms ease, color 160ms ease;
+  color: var(--text);
+}
+
+.contact-list a .left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-list a .icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+.contact-list a .label {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.contact-list a .right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+}
+
+.contact-list a:hover {
+  background: var(--button-hover);
+}
+
+@media (min-width: 640px) {
+  .contact-list a {
+    padding: 14px 18px;
+  }
+}
