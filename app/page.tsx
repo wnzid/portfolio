@@ -1,5 +1,5 @@
 "use client";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
